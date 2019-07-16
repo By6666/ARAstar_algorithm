@@ -6,7 +6,7 @@
 
 * Code of reading map in the file [grid_input.cpp](./grid_input.cpp).
 
-* Algorithm code file [Astar_algorithm.cpp](./ARAstar_algorithm.cpp).
+* Algorithm code file [ARAstar_algorithm.cpp](./ARAstar_algorithm.cpp).
 
 
 
