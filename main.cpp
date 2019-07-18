@@ -15,17 +15,18 @@ int main() {
   clock_t start, end;
   start = clock();
   for (int i = 0; i < 20; ++i) {
-    std::cout << "/*******************************************/" <<
-    std::endl; std::cout << "/**********file——" << i + 1 << "**********/" <<
-    std::endl; SearchOneMap(i); std::cout <<
-    "/*******************************************/" << std::endl; std::cout
-    << std::endl;
+    std::cout << "/*******************************************/" << std::endl;
+    std::cout << "/**********file——" << i + 1 << "**********/" << std::endl;
+    SearchOneMap(i);
+    std::cout << "/*******************************************/" << std::endl;
+    std::cout << std::endl;
   }
   end = clock();
 
   //输出运行的时间
-  printf("Spend time %.5f seconds!!\n", (float)(end - start) /
-  CLOCKS_PER_SEC); std::cout << std::endl << std::endl; PrintSumResult();
+  printf("Spend time %.5f seconds!!\n", (float)(end - start) / CLOCKS_PER_SEC);
+  std::cout << std::endl << std::endl;
+  PrintSumResult();
 
   // int16_t map_num = 0;
   // while (1) {
@@ -35,13 +36,12 @@ int main() {
   //     std::cout << "Input wrong, Please input again !!" << std::endl;
   //     continue;
   //   }
-  //   std::cout << "/*******************************************/" << std::endl;
-  //   std::cout << "/**********file——" << map_num << "**********/" << std::endl;
-  //   SearchOneMap(map_num - 1);
+  //   std::cout << "/*******************************************/" <<
+  //   std::endl; std::cout << "/**********file——" << map_num << "**********/"
+  //   << std::endl; SearchOneMap(map_num - 1);
 
-  //   std::cout << "/*******************************************/" << std::endl;
-  //   std::cout << std::endl;
-  //   PrintSumResult();
+  //   std::cout << "/*******************************************/" <<
+  //   std::endl; std::cout << std::endl; PrintSumResult();
   // }
 
   return 0;

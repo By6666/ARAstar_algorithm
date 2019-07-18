@@ -9,7 +9,6 @@
 #include "include/ARAstar_algorithm.h"
 #include "include/grid_input.h"
 
-
 int main() {
   clock_t start, end;
   start = clock();
