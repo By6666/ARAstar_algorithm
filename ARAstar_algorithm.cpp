@@ -18,6 +18,7 @@ ARAstar::ARAstar(int16_t row_arg, int16_t column_arg, Points statr_arg,
   search_nums_count_ = 0;            //搜索次数初始化
   all_expand_points_count_ = 0;      //扩展点个数计数初始化
   current_expand_points_count_ = 0;  //当前扩展点计数
+  move_step_nums_ = 0;               //移动步数
 }
 
 /* 清空一次ARA*算法计算所需的容器
@@ -92,7 +93,7 @@ std::vector<CellInfo> ARAstar::GetNeighborsInfo(const Points& current_pos) {
 
 /* 执行一次A*算法
  * 输入：当前起点与终点的信息
- * 输出：alse：搜索失败; true：搜索成功
+ * 输出：false：搜索失败; true：搜索成功
  * */
 bool ARAstar::AstarAlgorithm(CellInfo& start, CellInfo& goal) {
   std::vector<CellInfo> incons_list;     //非一致列表，初始化为空集
@@ -402,10 +403,11 @@ void SearchOneMap(int map_num_) {
   }
 
   //**结果统计
-  sum_result.push_back(std::to_string(map_num_ + 1) + "  " +
-                       std::to_string(ARAstar_algorithm.get_search_nums()) +
-                       "  " +
-                       std::to_string(ARAstar_algorithm.get_all_expand_nums()));
+  sum_result.push_back(
+      std::to_string(map_num_ + 1) + "          " +
+      std::to_string(ARAstar_algorithm.get_search_nums()) + "          " +
+      std::to_string(ARAstar_algorithm.get_all_expand_nums()) + "          " +
+      std::to_string(ARAstar_algorithm.get_move_step_nums()));
 }
 
 /* 打印统计结果
@@ -413,7 +415,14 @@ void SearchOneMap(int map_num_) {
  * 输出：无
  *  */
 void PrintSumResult() {
-  std::cout << "| map number | search numbers | expanded numbers |"
+  std::cout << std::endl
+            << "-——-——-——-——-——-——-——-——-***-——-——-——-——-——-——-——-——-——-"
+            << std::endl
+            << "-——                   Sum  Result                    ——-"
+            << std::endl
+            << "-——-——-——-——-——-——-——-——-***-——-——-——-——-——-——-——-——-——-"
+            << std::endl;
+  std::cout << "| map num | search nums | expand nums | move_step nums |"
             << std::endl;
   for (int16_t i = 0; i < sum_result.size(); ++i) {
     std::cout << sum_result[i] << std::endl;

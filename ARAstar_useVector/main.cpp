@@ -9,10 +9,8 @@
 #include "include/ARAstar_algorithm.h"
 #include "include/grid_input.h"
 
-// void SearchOneMap(int map_num_);
 
 int main() {
-  // *********************************************************
   clock_t start, end;
   start = clock();
   for (int i = 0; i < 20; ++i) {
@@ -43,6 +41,7 @@ int main() {
 
   //   std::cout << "/*******************************************/" <<
   //   std::endl; std::cout << std::endl;
+  // PrintSumResult();
   // }
 
   return 0;

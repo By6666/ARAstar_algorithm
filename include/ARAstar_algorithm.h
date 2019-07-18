@@ -78,6 +78,7 @@ class ARAstar {
   inline void StartMove() {
     current_start_ = current_path_.back();
     current_path_.pop_back();
+    ++move_step_nums_;
   }
   //判断要移动的下一个点是否为障碍物
   inline bool NextStepIsInObstacleList() {
@@ -101,6 +102,7 @@ class ARAstar {
   inline std::vector<Points> get_current_path() const { return current_path_; }
   inline int get_all_expand_nums() const { return all_expand_points_count_; }
   inline int get_search_nums() const { return search_nums_count_; }
+  inline int get_move_step_nums() const { return move_step_nums_; }
 
  private:
   // map info
@@ -120,7 +122,8 @@ class ARAstar {
   float heuristic_factor_;               // h(s)的权重系数
   int32_t current_expand_points_count_,  //一次算法中的expand计数
       all_expand_points_count_,          //整体算法中的expand计数
-      search_nums_count_;                //搜索次数计数
+      search_nums_count_,                //搜索次数计数
+      move_step_nums_;                   //移动步数计数
   //判断点是否在list中
   inline bool IsInList(const Points& point,
                        const std::vector<Points>& list) const {
